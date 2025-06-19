@@ -4,7 +4,11 @@ export const metadata = {
 };
 
 const sobrePage = () => {
-  return <div>sobre</div>;
+  return (
+    <div>
+      <h1>Sobre</h1>
+    </div>
+  );
 };
 
 export default sobrePage;

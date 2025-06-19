@@ -13,6 +13,9 @@ const Nav = () => {
       <li>
         <Link href="/contato#faleconosco">Contato</Link>
       </li>
+      <li>
+        <Link href="/acesso">Acessos</Link>
+      </li>
     </ul>
   );
 };
