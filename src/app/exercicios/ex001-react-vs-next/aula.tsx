@@ -46,7 +46,7 @@
 
 //obs: por isso que antigamente o pessoal batia na tecla de ter o conteúdo todo colocado no HTML e não depender tanto do JS para mostrar mas apenas para animar e faziam testes desativando o JS da página, tudo isso por conta do SEO, porque o conteudo estando ompleto em HTMl o SEO conseguiria ler tudo pois primeiro é servido o HTML e depois que o jS executa.
 
-// React x Next
+// React x Next - Resumo
 // Ou seja, o Next acaba tendo mais visibilidade SEO, sendo mais rápido e por ser um framework, o Next tenta ser uma solução completa e por isso já possui nativamente integrado uma maneira de lidar com rotas, api's, middlewares etc.
 
 // Por ser mais completo e complexo, acaba te dando mais regras o que facilita o caminho com uma 'metodologia' a seguir. ex: como devo lidar com rotas? uso esse pluguin ou esse outro. Não, o Next já fornece tudo nativo e já tem uma maneira clara de como usar a rota, porque possui a regra de criar dentro de app uma pasta chamada page e pronto. O lado negativo é que se seu app fugir das regras do Next, pode se tornar mais dificil o desenvolvimento dele.
@@ -54,3 +54,44 @@
 //o Deploy (subir um site no ar), no next precisa ser feito em um servidor que tenha Node, já que vai executar no server/backend. (isso já é facilitado pela empresa que criou o next, a vercel). O react tem mais liberdade para faer deploy
 
 // bugs: como o next é mais complexo acaba tendo mais bugs que o react que possui basicamente 0 bugs.
+
+// Exemplos:
+
+// React:
+import React from "react";
+
+export default function ClientPage() {
+  const [produtos, setProdutos] = React.useState(null);
+
+  React.useEffect(() => {
+    async function getProdutos() {
+      const response = await fetch("https://api.origamid.online/produtos");
+      const body = await response.json();
+      setProdutos(body);
+    }
+    getProdutos();
+  }, []);
+
+  return (
+    <main>
+      <h1>Client</h1>
+      {produtos &&
+        produtos.map((produto) => <li key={produto.id}>{produto.nome}</li>)}
+    </main>
+  );
+}
+
+// Next:
+export default async function ServerPage() {
+  const response = await fetch("https://api.origamid.online/produtos");
+  const produtos = await response.json();
+
+  return (
+    <main>
+      <h1>Server</h1>
+      {produtos.map((produto) => (
+        <li key={produto.id}>{produto.nome}</li>
+      ))}
+    </main>
+  );
+}
