@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import Nav from "@/componentes/Nav";
 
 export const metadata: Metadata = {
   title: "Origamid Next",
@@ -13,6 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
+      <Nav />
       <body>{children}</body>
     </html>
   );
