@@ -19,6 +19,9 @@ const Nav = () => {
       <li>
         <Link href="/imc">imc</Link>
       </li>
+      <li>
+        <Link href="/fetch">fetch</Link>
+      </li>
     </ul>
   );
 };

@@ -115,3 +115,7 @@ export default function HomePage() {
 // Entendendo o erro de hidratação:
 
 // No Next.js com App Router, os componentes são primeiro renderizados no servidor (SSR) e depois reativados no cliente (hidratação). Se a renderização do servidor e do cliente não bater exatamente, ocorre um erro de hidratação.
+
+//lição do exercício entender que para criar um componente react como vc está acostumado tem que ser uma pagina de 'use client' e em um componente para poder renderizar isso em uma page do tipo server.
+
+// outra lição valores soltos {altura} no meio do return causam erros. (sabe quando coloca um valor solto embaixo para testar reatividade...)
