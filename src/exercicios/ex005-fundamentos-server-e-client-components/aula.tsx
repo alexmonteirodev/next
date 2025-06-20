@@ -103,3 +103,15 @@ export default function HomePage() {
     </main>
   );
 }
+//---------------------------------------------------------------------------------
+// EXERCÍCIO:
+// - Crie uma página `/imc`
+// - Crie um link para a página
+// - Crie um componente para fazer o cálculo do IMC
+// - O componente deve conter inputs (altura e peso) e um botão calcular
+// - Ao clicar em calcular, deve mostrar o IMC na tela
+// - Índice de Massa Corporal = peso / altura * altura
+
+// Entendendo o erro de hidratação:
+
+// No Next.js com App Router, os componentes são primeiro renderizados no servidor (SSR) e depois reativados no cliente (hidratação). Se a renderização do servidor e do cliente não bater exatamente, ocorre um erro de hidratação.

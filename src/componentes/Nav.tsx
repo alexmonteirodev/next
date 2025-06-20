@@ -16,6 +16,9 @@ const Nav = () => {
       <li>
         <Link href="/acesso">Acessos</Link>
       </li>
+      <li>
+        <Link href="/imc">imc</Link>
+      </li>
     </ul>
   );
 };
