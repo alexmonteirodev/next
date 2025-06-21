@@ -12,7 +12,7 @@ type Produto = {
 const ServerFetch = async () => {
   const r = await fetch("https://api.origamid.online/produtos");
   const json: Produto[] = await r.json();
-  console.log(json); //mostra no terminal
+  //console.log(json); //mostra no terminal
 
   return (
     <div>
