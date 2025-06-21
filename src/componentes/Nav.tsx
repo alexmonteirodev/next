@@ -22,6 +22,12 @@ const Nav = () => {
       <li>
         <Link href="/fetch">fetch</Link>
       </li>
+      <li>
+        <Link href="/produtos">produtos</Link>
+      </li>
+      <li>
+        <Link href="/cursos">cursos</Link>
+      </li>
     </ul>
   );
 };
