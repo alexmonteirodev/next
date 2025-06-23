@@ -35,6 +35,11 @@ const Exercicios = () => {
           ex007-fundamentos-dynamic-routes
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex008-exercicio-routes">
+          ex008-exercicio-routes
+        </Link>
+      </li>
     </ul>
   );
 };
