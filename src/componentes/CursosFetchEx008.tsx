@@ -1,6 +1,16 @@
 import React from "react";
 import Link from "next/link";
 
+export type AulasType = {
+  id: number;
+  slug: string;
+  nome: string;
+  descricao: string;
+  curso_id: number;
+  tempo: number;
+  ordem: number;
+};
+
 export type Cursos = {
   id: number;
   slug: string;
@@ -8,6 +18,7 @@ export type Cursos = {
   descricao: string;
   total_aulas: number;
   total_horas: number;
+  aulas?: AulasType[];
 };
 
 export const CursosFetchEx008 = async () => {
@@ -18,7 +29,7 @@ export const CursosFetchEx008 = async () => {
     <ul>
       {json.map((curso) => (
         <li key={curso.id}>
-          <Link href={curso.nome}>{curso.nome}</Link>
+          <Link href={`./cursos/${curso.slug}`}>{curso.nome}</Link>
         </li>
       ))}
     </ul>
