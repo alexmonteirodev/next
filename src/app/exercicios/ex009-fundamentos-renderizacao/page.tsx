@@ -13,7 +13,12 @@ const PageRender = () => {
       </p>
       <ul>
         <li>
-          <Link href={`${pathname}/ssg`}>SSG - ISR</Link>
+          <Link href={`${pathname}/ssg`}>
+            SSG - ISR (Incremental Static Regeneration)
+          </Link>
+        </li>
+        <li>
+          <Link href={`${pathname}/csr`}>CSR (Client Side Rendering)</Link>
         </li>
       </ul>
     </div>
