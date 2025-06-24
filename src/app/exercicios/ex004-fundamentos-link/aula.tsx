@@ -4,7 +4,7 @@
 
 import Link from "next/link";
 
-export default function Menu() {
+export function Menu() {
   return (
     <ul className="menu">
       <li>
@@ -27,9 +27,8 @@ export default function Menu() {
 // O comportamento do prefetch só é possível ser analisado em produção.
 
 //ex:
-import Link from "next/link";
 
-export default function Menu() {
+export function Menu2() {
   return (
     <ul className="menu">
       <li>
@@ -53,9 +52,7 @@ export default function Menu() {
 // - Link Interno e Scroll
 // O comportamento de scroll interno funciona da mesma forma que o <a>. É possível desabilitar o scroll automático com scroll={false}.
 
-import Link from "next/link";
-
-export default function Menu() {
+export function Menu3() {
   return (
     <ul className="menu">
       <li>

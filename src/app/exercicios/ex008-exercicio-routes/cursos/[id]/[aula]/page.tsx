@@ -1,11 +1,13 @@
 import { AulasType } from "@/componentes/CursosFetchEx008";
 import React from "react";
+
 type AulaParams = {
-  params: {
+  params: Promise<{
     id: string;
     aula: string;
-  };
+  }>;
 };
+
 const pageAula = async ({ params }: AulaParams) => {
   const { id, aula } = await params;
 

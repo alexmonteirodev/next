@@ -58,40 +58,40 @@
 // Exemplos:
 
 // React:
-import React from "react";
+// import React from "react";
 
-export default function ClientPage() {
-  const [produtos, setProdutos] = React.useState(null);
+// export default function ClientPage() {
+//   const [produtos, setProdutos] = React.useState(null);
 
-  React.useEffect(() => {
-    async function getProdutos() {
-      const response = await fetch("https://api.origamid.online/produtos");
-      const body = await response.json();
-      setProdutos(body);
-    }
-    getProdutos();
-  }, []);
+//   React.useEffect(() => {
+//     async function getProdutos() {
+//       const response = await fetch("https://api.origamid.online/produtos");
+//       const body = await response.json();
+//       setProdutos(body);
+//     }
+//     getProdutos();
+//   }, []);
 
-  return (
-    <main>
-      <h1>Client</h1>
-      {produtos &&
-        produtos.map((produto) => <li key={produto.id}>{produto.nome}</li>)}
-    </main>
-  );
-}
+//   return (
+//     <main>
+//       <h1>Client</h1>
+//       {produtos &&
+//         produtos.map((produto) => <li key={produto.id}>{produto.nome}</li>)}
+//     </main>
+//   );
+// }
 
 // Next:
-export default async function ServerPage() {
-  const response = await fetch("https://api.origamid.online/produtos");
-  const produtos = await response.json();
+// export default async function ServerPage() {
+//   const response = await fetch("https://api.origamid.online/produtos");
+//   const produtos = await response.json();
 
-  return (
-    <main>
-      <h1>Server</h1>
-      {produtos.map((produto) => (
-        <li key={produto.id}>{produto.nome}</li>
-      ))}
-    </main>
-  );
-}
+//   return (
+//     <main>
+//       <h1>Server</h1>
+//       {produtos.map((produto) => (
+//         <li key={produto.id}>{produto.nome}</li>
+//       ))}
+//     </main>
+//   );
+// }

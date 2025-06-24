@@ -6,7 +6,7 @@
 // Por padrão, todos os componentes são Server Components. Ex:
 
 // page.tsx -> server component
-export default function HomePage() {
+export function HomePage() {
   return (
     <main>
       <h1>Home</h1>
@@ -19,7 +19,7 @@ export default function HomePage() {
 // @/component/acessos -> server component
 import fs from "fs/promises";
 
-export default async function Acessos() {
+export async function Acessos() {
   await fs.appendFile("acesso.txt", `${Date.now()} `, "utf8");
   const data = await fs.readFile("acesso.txt", "utf8");
 
@@ -34,10 +34,10 @@ export default async function Acessos() {
 
 //  Por padrão, todos os componentes são Server Components, para tornar o componente client, basta usar a string 'use client' no inicio co componente:
 
-("use client");
+// ("use client");
 import React from "react";
 
-export default function Width() {
+export function Width() {
   const [ativar, setAtivar] = React.useState(false);
   const [width, setWidth] = React.useState(0);
 
@@ -89,20 +89,20 @@ export default function Width() {
 //caso precise usar algo da Api web fora do effect, da pra desabilitar a pré-renderização daquele código em específico da pra usar o 'dynamic', funcionalidade nativa do Next e desabilita a pre-renderização (ssr: false)
 // solução de importação:
 
-import dynamic from "next/dynamic";
+// import dynamic from "next/dynamic";
 
-export const Width = dynamic(() => import("@/components/width"), {
-  ssr: false,
-});
+// export const Width2 = dynamic(() => import("@/components/width"), {
+//   ssr: false,
+// });
 
-export default function HomePage() {
-  return (
-    <main>
-      <h1>Home</h1>
-      <Width />
-    </main>
-  );
-}
+// export default function HomePage2() {
+//   return (
+//     <main>
+//       <h1>Home</h1>
+//       <Width />
+//     </main>
+//   );
+// }
 //---------------------------------------------------------------------------------
 // EXERCÍCIO:
 // - Crie uma página `/imc`

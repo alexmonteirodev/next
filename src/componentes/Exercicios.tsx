@@ -40,6 +40,11 @@ const Exercicios = () => {
           ex008-exercicio-routes
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex009-fundamentos-renderizacao">
+          ex009-fundamentos-renderizacao
+        </Link>
+      </li>
     </ul>
   );
 };

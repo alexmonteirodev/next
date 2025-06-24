@@ -3,18 +3,17 @@ import { Cursos } from "@/componentes/CursosFetchEx008";
 import Link from "next/link";
 
 type PageParams = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 const pageCadaCurso = async ({ params }: PageParams) => {
   const { id } = await params;
+  console.log(id);
 
   const r = await fetch(`https://api.origamid.online/cursos/${id}`);
   const data: Cursos = await r.json();
-
-  console.log(data);
 
   return (
     <div>

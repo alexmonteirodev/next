@@ -1,9 +1,9 @@
 import React from "react";
 
 type PageParams = {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 };
 
 type Produto = {

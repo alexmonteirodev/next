@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Nav from "@/componentes/Nav";
+// import Nav from "@/componentes/Nav";
 
 export const metadata: Metadata = {
   title: "Origamid Next",

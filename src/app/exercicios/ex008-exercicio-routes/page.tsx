@@ -12,7 +12,7 @@ const pageExercicio = () => {
         <br /> - Crie rotas dinâmicas para os cursos, exemplo: /cursos/html
         <br /> - Crie rotas dinâmicas para as aulas, exemplo:
         /cursos/html/introducao-ao-html
-        <br /> - Na página "Cursos", exiba uma lista com todos os cursos
+        <br /> - Na página Cursos, exiba uma lista com todos os cursos
         <br /> - Ao clicar em um curso, mostre uma página com as informações
         deste curso
         <br /> - Na página do curso, exiba uma lista com as aulas do curso

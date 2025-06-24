@@ -13,15 +13,15 @@
 //o next gera um objeto: {params: Promise, searchParams: Promise}, por isso como agora é async criamos um type pra ele que seria PageParams (olhar na page de id em produtos)
 
 //jeito antigo:
-function Page({ params }) {
-  return <p>ID: {params.id}</p>;
-}
+// function Page({ params }) {
+//   return <p>ID: {params.id}</p>;
+// }
 
 //jeito novo:
-async function Page({ params }) {
-  const { id } = await params;
-  return <p>ID: {id}</p>;
-}
+// async function Page({ params }) {
+//   const { id } = await params;
+//   return <p>ID: {id}</p>;
+// }
 //--------------------------------------------------------------------------------------
 //outra forma de criar rotas dinamicas é slug
 
