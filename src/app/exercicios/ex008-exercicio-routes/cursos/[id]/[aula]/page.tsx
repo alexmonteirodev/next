@@ -11,7 +11,6 @@ const pageAula = async ({ params }: AulaParams) => {
 
   const r = await fetch(`https://api.origamid.online/cursos/${id}/${aula}`);
   const json: AulasType = await r.json();
-  console.log(json);
   return (
     <div>
       <h1>pageAula</h1>
