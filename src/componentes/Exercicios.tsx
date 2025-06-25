@@ -45,6 +45,11 @@ const Exercicios = () => {
           ex009-fundamentos-renderizacao
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex010-route-randlers">
+          ex010-route-randlers
+        </Link>
+      </li>
     </ul>
   );
 };
