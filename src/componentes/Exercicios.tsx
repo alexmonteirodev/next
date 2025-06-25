@@ -50,6 +50,11 @@ const Exercicios = () => {
           ex010-route-randlers
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex011-route-randlers-exercicio">
+          ex011-route-randlers-exercicio
+        </Link>
+      </li>
     </ul>
   );
 };
