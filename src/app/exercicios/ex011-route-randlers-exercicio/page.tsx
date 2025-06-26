@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Ex011Menu from "@/componentes/Ex011Menu";
 import React from "react";
 
 const pageRouteHandlerExercicio = () => {
@@ -6,9 +6,7 @@ const pageRouteHandlerExercicio = () => {
     <div>
       <div style={{ lineHeight: "2rem" }}>
         <h1>Exercicio:</h1>
-        <Link href="/exercicios/ex011-route-randlers-exercicio/exercicio">
-          Exercicio
-        </Link>
+        <Ex011Menu />
         <div>
           <br />- Crie uma rota chamada api/login
           <br />- A rota deve receber um username e password via POST

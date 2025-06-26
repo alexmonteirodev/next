@@ -21,6 +21,8 @@ const PageExercicio = () => {
     );
     const data = await r.json();
     console.log(data);
+    if (r.ok)
+      window.location.href = "/exercicios/ex011-route-randlers-exercicio";
   }
   return (
     <div>
@@ -28,6 +30,7 @@ const PageExercicio = () => {
         <label htmlFor="nome">Nome</label>
         <input
           id="nome"
+          name="nome"
           type="text"
           placeholder="nome"
           onChange={({ target }) => setUser(target.value)}
@@ -36,6 +39,7 @@ const PageExercicio = () => {
         <input
           id="senha"
           type="text"
+          name="senha"
           placeholder="senha"
           onChange={({ target }) => setPassword(target.value)}
         />
