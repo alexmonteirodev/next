@@ -3,7 +3,7 @@
 import setCookie from "@/actions/set-cookie";
 import React from "react";
 
-const pageEx012 = () => {
+const PageEx012 = () => {
   const [valor, setValor] = React.useState("");
   async function handleClick() {
     console.log("teste");
@@ -19,4 +19,4 @@ const pageEx012 = () => {
   );
 };
 
-export default pageEx012;
+export default PageEx012;

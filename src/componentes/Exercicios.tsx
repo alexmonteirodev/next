@@ -60,6 +60,11 @@ const Exercicios = () => {
           ex012-server-actions
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex013-server-actions-exercicio">
+          ex013-server-actions-exercicio
+        </Link>
+      </li>
     </ul>
   );
 };
