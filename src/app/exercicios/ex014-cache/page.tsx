@@ -1,3 +1,5 @@
+import Atualizar from "@/componentes/atualizar";
+
 type Acao = {
   id: number;
   preco_anterior: number;
@@ -12,7 +14,8 @@ type Acao = {
 export default async function cachePage() {
   const r = await fetch("https://api.origamid.online/acoes/lua", {
     next: {
-      revalidate: 0,
+      revalidate: 5,
+      //   tags: ['acoes']
     },
   });
   const data: Acao = await r.json();
@@ -20,6 +23,7 @@ export default async function cachePage() {
   return (
     <main>
       <h1>Ex014-cache</h1>
+      <Atualizar />
       <h2>{data.nome}</h2>
       <p>Preço: {data.preco}</p>
       <p>Atualizada: {data.atualizada}</p>

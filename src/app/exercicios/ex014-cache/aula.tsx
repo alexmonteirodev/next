@@ -43,6 +43,32 @@ fetch("https://api.origamid.online/acoes/lua", {
 //obs: se vc usar:
 export const revalidate = 5;
 // o next entende que vc quer passar o revalidate como 5s então ele ler a constante e aplicar no codigo inteiro em todos os fetchs.
+
+//ex: ex014-cache > page
 //-------------------------------------
 
 // •	Em Ação:
+
+// - revalidatePath
+// revalidatePath é uma função/método do next que recebe path de uma rota e revalida o cache da mesma. Pode ser executada no servidor, em Route Handlers e Server Actions.
+
+// a vantagem de usar o revalidatePath é que ele atualiza o cache no servidor e instantaneamente já atualiza no client com o valor novo
+
+//obs: como criamos o revalidate dentro de um server action podermos usar ele no client dentro de um useEffect que tenha um setTimeInterval e fazer com que a pagina atualize sozinha a cada x segundos. (não é o ideal porque se não vai ficar mandando requisição toda hora, mas pra ver as possibilidades)
+
+//ex: actions > ravalidate-path + componente 'Atualizar'
+//-------------------------------------
+
+// - revalidateTags
+// Podemos definir tags durante o fetch e revalidar o cache de todas as rotas que possuem a mesma tag.
+
+// Pode ser usada para revalidar uma lista de produtos, quando um novo produto for postado.
+
+// a diferença aqui é qeu no revalidatePath vc revalida apenas um rota especifica.
+const response = await fetch("https://api.origamid.online/acoes/lua", {
+  next: {
+    tags: ["acoes"],
+  },
+});
+//revalidateTag("acoes")
+// em resumo, da pra colocar uma tag nos fetchs que eu quiser que servem como um 'id' e depois posso usar revalidateTags() e passar a tag/id que defini que vai revalidar todos os fetchs que usam a mesma tag de uma vez.
