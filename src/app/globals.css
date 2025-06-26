@@ -49,6 +49,15 @@ li {
   margin-bottom: 0.5rem;
 }
 
+a {
+  text-decoration: none;
+  color: #551a8b;
+}
+a:hover {
+  color: var(--color);
+  text-decoration: underline;
+}
+
 label {
   display: block;
   margin-bottom: 0.25rem;

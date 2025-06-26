@@ -55,6 +55,11 @@ const Exercicios = () => {
           ex011-route-randlers-exercicio
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex012-server-actions">
+          ex012-server-actions
+        </Link>
+      </li>
     </ul>
   );
 };
