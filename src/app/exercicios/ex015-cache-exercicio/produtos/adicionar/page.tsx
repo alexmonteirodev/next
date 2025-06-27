@@ -1,6 +1,6 @@
 "use client";
 
-import { ActionsPost } from "@/actions/ex015-post";
+import { ActionsPost, ProdutosData } from "@/actions/ex015-post";
 import React from "react";
 
 export default function AdicionarPage() {
@@ -12,7 +12,7 @@ export default function AdicionarPage() {
 
   const importedNumber = imported ? 1 : 0;
 
-  const produto = {
+  const produto: ProdutosData = {
     nome: name,
     descricao: description,
     preco: Number(price),
