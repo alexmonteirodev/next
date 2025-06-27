@@ -68,6 +68,11 @@ const Exercicios = () => {
       <li>
         <Link href="/exercicios/ex014-cache">ex014-cache</Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex015-cache-exercicio">
+          ex015-cache-exercicio
+        </Link>
+      </li>
     </ul>
   );
 };
