@@ -76,6 +76,14 @@ const Exercicios = () => {
       <li>
         <Link href="/exercicios/ex016-form-action">ex016-form-action</Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex017-error">ex017-error</Link>
+      </li>
+      <li>
+        <Link href="/exercicios/ex018-loading-e-suspense">
+          ex018-loading-e-suspense
+        </Link>
+      </li>
     </ul>
   );
 };
