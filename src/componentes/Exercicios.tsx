@@ -84,6 +84,9 @@ const Exercicios = () => {
           ex018-loading-e-suspense
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex019-router-hooks">ex019-router-hooks</Link>
+      </li>
     </ul>
   );
 };
