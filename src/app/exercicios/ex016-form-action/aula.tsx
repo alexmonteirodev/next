@@ -25,7 +25,7 @@
 
 //ex: componente AdicionarProdutoFormAction & action-form-data
 
-// da forma como fizemos, passando a ação diretamente, perdemos um pouco docontrole do formulário pois não tem como saber o state do formulario no momento, então não daria pra fazer um botão carregando por exemplo. Para lidar com isso, o React tem alguns hooks novos:
+// da forma como fizemos, passando a ação diretamente, perdemos um pouco docontrole do formulário pois não tem como saber o state do formulario no momento, então não daria pra fazer um botão carregando ou uma verificação dos campos por exemplo. Para lidar com isso, o React tem alguns hooks novos:
 
 //--------------------------------------------------------------------
 
@@ -81,3 +81,21 @@
 // <button type="submit" disabled={status.pending}>Adicionar</button>
 //assim, desabilitamos o botão para o user não ficar clicando varias vezes e enviando um monte de requisição
 //--------------------------------------------------------------------
+
+// - useFormState
+// Com o useFormState é possível controlar o estado do formulário.
+
+//geralmente é utilizado para verificar os campos do form para ver se não possuem erros como um email válido por exemplo
+
+// O useFormState retorna uma array com dois valores (igual do useState), o primeiro é o estado do formulário e o segundo é a server action. Ele deve receber a server action original como argumento.
+
+//   const [state, formAction] = useFormState(adicionarProduto, {
+//     errors: [],
+//   });
+
+// <form action={formAction}> ... </form>
+
+// Atenção, depois de um update o useFormState passou a se chamar useActionState e agora é importado do React e não do react-dom
+
+//Resumo:
+// É melhor continuar usando o form com onSubmit como já faz, do que usar esses hooks porque é meio ruim porque o status temq ue ser do lado de fora, o actionstate do lado de dentro fica confuso e bagunçado e não tem problema usar com o onSubmit que já estamos acostumados, logo, é mais pra saber que existem esses hooks. O ponto positivo desses hooks é que funcionam sem JS porque roda pelo servidor.
