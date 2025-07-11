@@ -92,6 +92,11 @@ const Exercicios = () => {
           ex020-generate-static-params
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex021-generate-metadata">
+          ex021-generate-metadata
+        </Link>
+      </li>
     </ul>
   );
 };
