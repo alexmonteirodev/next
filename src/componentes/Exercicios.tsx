@@ -97,6 +97,9 @@ const Exercicios = () => {
           ex021-generate-metadata
         </Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex022-not-found">ex022-not-found</Link>
+      </li>
     </ul>
   );
 };
