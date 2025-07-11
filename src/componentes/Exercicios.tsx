@@ -87,6 +87,11 @@ const Exercicios = () => {
       <li>
         <Link href="/exercicios/ex019-router-hooks">ex019-router-hooks</Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex020-generate-static-params">
+          ex020-generate-static-params
+        </Link>
+      </li>
     </ul>
   );
 };
