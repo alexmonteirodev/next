@@ -42,3 +42,63 @@ const nextConfig = {
 //   max-width: 100%;
 //   display: block;
 // }
+
+// - Image Sizes (sizes="100vw")
+// O Next.js gera imagens em tamanhos diferentes de acordo com os possíveis tamanhos de tela definidos em deviceSizes. A imagem que será servida é decidida pelo Next.js de acordo com o tamanho da tela no momento do carregamento.
+
+// Ele apenas carrega tamanhos diferentes se definirmos o atributo sizes no componente Image. Um valor como 100vw significa que o Next.js deve sempre carregar uma imagem que consiga ocupar 100% da viewport sempre que possível.
+
+// sizes="100vw"
+
+// deviceSizes:
+// [600, 800, 1200, 2400, 3600]
+
+// BrowserWidth = 900px, Imagem = 1200px.
+// BrowserWidth = 1800px, Imagem = 2400px.
+
+// Muda de acordo com a densidade de pixels da tela [4k (2x)]:
+
+// BrowserWidth = 900px (1800px), Imagem = 2400px.
+// Copiar
+// <Image
+//   sizes="100vw" // 100% da viewport
+// />
+// Copiar
+// // next.config.mjs
+// images: {
+//   // valores padrão: [640, 750, 828, 1080, 1200, 1920, 2048, 3840]
+//   deviceSizes: [600, 800, 1200, 2400, 3600],
+// },
+
+// - Media Queries
+// Podemos definir media queries dentro de sizes para alterar o tamanho da imagem de acordo com o tamanho da tela.
+
+{
+  /* <Image sizes="(max-width: 600px) 100vw, 50vw" />
+
+deviceSizes:
+[600, 800, 1200, 2400, 3600]
+
+(max-width: 600px) 100vw
+é dizer: BrowserWidth = 500px, Imagem = 600px.
+
+, 50vw = Caso contrário, carregue uma imagem que ocupe 50% da viewport.
+é dizer:  BrowserWidth = 1300px, Imagem = 800px (1300/2 = 650 -> 800). */
+}
+
+// - priority
+//é possivel definir via atributo priority pra que a imagem tenha prioridade no carregamento, isso é bom para carregar as imagens que vão aparecer logo quando o site abrir para que elas não tenham delay e as outras que não aparecem de primeira vão carregando em quanto isso.
+
+// - Imagens Locais
+// Coloque as imagens dentro de public/imagens. Você pode acessar arquivos da pasta public diretamente no Next.js utilizando a url /.
+
+{
+  /* <Image src="/imagens/dogs.svg" width={28} height={22} alt="Dogs" />
+<Image
+  src="/imagens/login.jpg"
+  width={1200}
+  height={1600}
+  alt="Dogs"
+  sizes="100vw"
+/> */
+}
