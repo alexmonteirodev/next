@@ -103,6 +103,9 @@ const Exercicios = () => {
       <li>
         <Link href="/exercicios/ex023-layout">ex023-layout</Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex024-next-css">ex024-next-css</Link>
+      </li>
     </ul>
   );
 };
