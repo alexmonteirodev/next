@@ -2,6 +2,7 @@
 // O Next.js possui um componente chamado Image que é utilizado para carregar imagens de forma otimizada.
 //porque usar image ao invés de img?
 //porque o Image vai otimizar as imagens automaticamente via node e também, vai gerar imagens responsivas
+//otimizações como: a imagem é armazenada em cache e agora passa a estar no servidor de node (next>cache>imagens); a imagem passa de jpg pra webp; diminui os kb (atributo quality - ideal 75% - caso não atribua nenhum valor, vai ser 75 default);
 
 //nessa tag Image, temos que importar do next/image e definir atributos nela, que são o tamanho height e width, se não o JS gera um erro dizendo que está faltando o tamanho da imagem:
 import Image from "next/image";
@@ -12,7 +13,7 @@ import Image from "next/image";
   height={800} // deve ser proporcional ao width, respeitando a proporção
   alt="Lobo branco dormindo sobre pedras"
   quality={80} // define a qualidade da imagem
-  sizes="100vw"
+  sizes="100vw" //defini apenas o tamanho da imagem para otimizar, não por questoes de css. basicamente o next pega o tamanho de 100vw no momento e otimiza a imagem para um tamanho correspondente a tela e isso é definido no next.config.mjs também
 />;
 
 // - remotePatterns
