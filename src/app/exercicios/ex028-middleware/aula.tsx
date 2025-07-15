@@ -81,3 +81,78 @@ export const config = {
 // export const config = {
 //   matcher: ['/conta', '/cursos'],
 // };
+//-------------------------------------------------
+
+// - Cookies
+// Dá para acessar os cookies do request via request.cookies e definir novos cookies na resposta via response.cookies. É possível também acessar os headers da requisição e resposta.
+
+// import { NextResponse } from 'next/server';
+// import type { NextRequest } from 'next/server';
+
+// export async function middleware(request: NextRequest) {
+//   const token = request.cookies.get('token')?.value;
+
+//   const response = NextResponse.next();
+
+//   response.cookies.set('acessouConta', 'true');
+//   response.cookies.delete('token');
+
+//   return response;
+// }
+
+// export const config = {
+//   matcher: ['/'],
+// };
+//-------------------------------------------------
+
+// - Matcher
+// O matcher é uma propriedade do middleware que define em quais rotas o middleware será aplicado.
+
+// ['/cursos'] // rota /cursos
+// ['/cursos', '/login'] // rota /cursos e /login
+// ['/cursos/:path*'] // todas as rotas que começam com /cursos
+// ['/(.*)'] ou ['/:path*'] // todas as rotas que começam com /
+// ['/((?!api|_next|static|public|favicon.ico).*)'] // todas as rotas que não começam com /api, /_next, /static, /public, /favicon.ico
+
+// {
+//   source: '/((?!api|_next/static|_next/image|favicon.ico).*)',
+//   // ignora se for prefetch
+//   missing: [
+//     { type: 'header', key: 'next-router-prefetch' },
+//     { type: 'header', key: 'purpose', value: 'prefetch' },
+//   ],
+// },
+//--------------------------------------------------------
+
+// - Múltiplos Middlewares
+// No momento, não é possível definir múltiplos middlewares, temos então que lidar dentro do middleware e verificar o caminho da requisição.
+
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
+export function middleware(request: NextRequest) {
+  // nova rota
+  if (request.nextUrl.pathname.startsWith("/entrar")) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  // verifica se tem o token e se está tentando entrar em /conta
+  const token = request.cookies.get("token")?.value;
+  if (!token && request.nextUrl.pathname.startsWith("/conta")) {
+    return NextResponse.redirect(new URL("/login", request.url));
+  }
+
+  return NextResponse.next();
+}
+
+export const config = {
+  matcher: [
+    {
+      source: "/((?!api|_next/static|_next/image|favicon.ico).*)",
+      missing: [
+        { type: "header", key: "next-router-prefetch" },
+        { type: "header", key: "purpose", value: "prefetch" },
+      ],
+    },
+  ],
+};
