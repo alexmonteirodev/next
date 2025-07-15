@@ -112,6 +112,9 @@ const Exercicios = () => {
       <li>
         <Link href="/exercicios/ex026-fonts">ex026-fonts</Link>
       </li>
+      <li>
+        <Link href="/exercicios/ex027-scripts">ex027-scripts</Link>
+      </li>
     </ul>
   );
 };
